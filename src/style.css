@@ -1,0 +1,72 @@
+:root {
+  --fontColor: white;
+  --buttonColor: navy;
+  --borderColor: rgb(255, 200, 0);
+  --backgroundColor: black;
+  --alternateBackgroundColor: gray;
+}
+
+.hide-display {
+  display: none;
+}
+
+.centered-container {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  width: 100%;
+  height: 100%;
+  transform: translate(-50%, -50%);
+  background-color: rgba(0, 0, 0, 0.5);
+}
+
+#form-container {
+  color: var(--fontColor);
+  border: 6px double var(--alternateBackgroundColor);
+  background-color: black;
+  width: 50%;
+  height: 50%;
+  max-height: 40rem;
+  min-width: 30rem;
+  max-width: 40rem;
+  z-index: 9999;
+}
+
+.form-control:focus {
+  border-color: var(--borderColor);
+  box-shadow: 0 0 0 0.2rem var(--borderColor);
+}
+
+input[type="checkbox"]:checked {
+  border-color: var(--borderColor);
+  box-shadow: 0 0 0 0.2rem var(--borderColor);
+  background-color: var(--buttonColor);
+}
+
+.submit, .new-book-btn, .toggle-read-btn {
+  color: white;
+  background-color: var(--buttonColor);
+}
+
+.submit:hover, .new-book-btn:hover, .toggle-read-btn:hover {
+  color: var(--backgroundColor);
+  background-color: var(--borderColor);
+}
+
+.cancel, .delete-btn {
+  color: var(--backgroundColor);
+  background-color:var(--borderColor);
+}
+
+.cancel:hover, .delete-btn:hover {
+  color: var(--fontColor);
+  background-color: var(--buttonColor);
+}
+
+.card {
+  width: 18rem;
+}
+
+#errorMsg {
+  color: red;
+}
