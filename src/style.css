@@ -6,6 +6,11 @@
   --alternateBackgroundColor: gray;
 }
 
+body {
+  height: 100vh;
+  width: 100vw;
+}
+
 .hide-display {
   display: none;
 }
@@ -14,8 +19,8 @@
   position: absolute;
   top: 50%;
   left: 50%;
-  width: 100%;
-  height: 100%;
+  width: 100vw;
+  height: 100vh;
   transform: translate(-50%, -50%);
   background-color: rgba(0, 0, 0, 0.5);
 }
@@ -25,8 +30,7 @@
   border: 6px double var(--alternateBackgroundColor);
   background-color: black;
   width: 50%;
-  height: 50%;
-  max-height: 40rem;
+  height: 75%;
   min-width: 30rem;
   max-width: 40rem;
   z-index: 9999;

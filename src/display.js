@@ -42,12 +42,14 @@ const createBookCard = (book) => {
   const toggleReadButton = bookCard.querySelector('.toggle-read-btn');
   toggleReadButton.addEventListener('click', () => {
     book.toggleRead();
+    saveLocal();
     updateBooksDisplay();
   });
 
   const deleteButton = bookCard.querySelector('.delete-btn');
   deleteButton.addEventListener('click', () => {
     library.removeBook(book.title);
+    saveLocal();
     updateBooksDisplay();
   });
 };
@@ -77,6 +79,7 @@ function addBook(e) {
     FORM.reset();
   } else {
     library.addBook(newBook);
+    saveLocal();
     ERROR_MESSAGE.classList.toggle('hide-display');
     updateBooksDisplay();
     hideForm();
@@ -89,5 +92,9 @@ function init() {
   CANCEL_BTN.addEventListener('click', hideForm);
   INPUTS.forEach((input) => input.setAttribute('autocomplete', 'off'));
 }
+
+const saveLocal = () => {
+  localStorage.setItem('library', JSON.stringify(library.books));
+};
 
 export default init;
