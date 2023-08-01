@@ -11,6 +11,11 @@ const ERROR_MESSAGE = document.getElementById('errorMsg');
 
 const library = new Library();
 
+// Storage
+const saveLocal = () => {
+  localStorage.setItem('library', JSON.stringify(library.books))
+}
+
 // Focus first input
 function focusFirstInput() {
   const firstInput = FORM.querySelector('input');
@@ -77,6 +82,7 @@ function addBook(e) {
     ERROR_MESSAGE.textContent = 'This book is already in your library';
     ERROR_MESSAGE.classList.toggle('hide-display');
     FORM.reset();
+    return;
   } else {
     library.addBook(newBook);
     saveLocal();
@@ -86,15 +92,9 @@ function addBook(e) {
   }
 }
 
-function init() {
+export default function init() {
   FORM.addEventListener('submit', addBook);
   NEW_BOOK_BTN.addEventListener('click', hideForm);
   CANCEL_BTN.addEventListener('click', hideForm);
   INPUTS.forEach((input) => input.setAttribute('autocomplete', 'off'));
 }
-
-const saveLocal = () => {
-  localStorage.setItem('library', JSON.stringify(library.books));
-};
-
-export default init;
