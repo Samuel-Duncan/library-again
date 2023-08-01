@@ -93,6 +93,12 @@ function addBook(e) {
 }
 
 export default function init() {
+  const localData = localStorage.getItem('library')
+  if (localData) {
+    library.books = JSON.parse(localData).map((bookData) => new Book(bookData.title, bookData.author, bookData.pages, bookData.isRead));
+    updateBooksDisplay();
+  }
+
   FORM.addEventListener('submit', addBook);
   NEW_BOOK_BTN.addEventListener('click', hideForm);
   CANCEL_BTN.addEventListener('click', hideForm);

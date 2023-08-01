@@ -5,7 +5,6 @@
     "browser": true
   },
   "rules": {
-    "no-alert": "off",
     "prettier/prettier": [
       "error",
       {

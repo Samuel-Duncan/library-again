@@ -21,6 +21,7 @@
   "homepage": "https://github.com/Samuel-Duncan/library-again#readme",
   "devDependencies": {
     "css-loader": "^6.8.1",
+    "eslint": "^8.46.0",
     "eslint-config-airbnb": "^19.0.4",
     "style-loader": "^3.3.3",
     "webpack": "^5.88.2",
